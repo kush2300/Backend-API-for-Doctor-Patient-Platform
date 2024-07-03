@@ -1,0 +1,25 @@
+package com.example.doctorpatientplatform.controller;
+
+import com.example.doctorpatientplatform.entity.Doctor;
+import com.example.doctorpatientplatform.service.DoctorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/api/doctors")
+public class DoctorController {
+    @Autowired
+    private DoctorService doctorService;
+
+    @PostMapping
+    public Doctor addDoctor(@RequestBody @Valid Doctor doctor) {
+        return doctorService.addDoctor(doctor);
+    }
+
+    @DeleteMapping("/{id}")
+    public void removeDoctor(@PathVariable Long id) {
+        doctorService.removeDoctor(id);
+    }
+}
