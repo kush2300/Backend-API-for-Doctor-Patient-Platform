@@ -1,0 +1,18 @@
+package com.example.doctorpatientplatform.controller;
+
+import com.example.doctorpatientplatform.entity.City;
+import com.example.doctorpatientplatform.entity.Patient;
+import com.example.doctorpatientplatform.entity.Speciality;
+import com.example.doctorpatientplatform.service.DoctorService;
+import com.example.doctorpatientplatform.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/suggestions")
+public class SuggestionController {
+    @Autowired
+    private
