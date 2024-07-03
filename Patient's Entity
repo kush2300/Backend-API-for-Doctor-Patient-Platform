@@ -1,0 +1,31 @@
+package com.example.doctorpatientplatform.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
+@Entity
+public class Patient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    @Size(min = 3)
+    private String name;
+
+    @Size(max = 20)
+    private String city;
+
+    @Email
+    private String email;
+
+    @Pattern(regexp = "\\d{10}")
+    private String phoneNumber;
+
+    @Enumerated(EnumType.STRING)
+    private Symptom symptom;
+
+}
