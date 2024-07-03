@@ -1,0 +1,28 @@
+package com.example.doctorpatientplatform.service;
+
+import com.example.doctorpatientplatform.entity.City;
+import com.example.doctorpatientplatform.entity.Doctor;
+import com.example.doctorpatientplatform.entity.Speciality;
+import com.example.doctorpatientplatform.repository.DoctorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class DoctorService {
+    @Autowired
+    private DoctorRepository doctorRepository;
+
+    public Doctor addDoctor(Doctor doctor) {
+        return doctorRepository.save(doctor);
+    }
+
+    public void removeDoctor(Long id) {
+        doctorRepository.deleteById(id);
+    }
+
+    public List<Doctor> suggestDoctors(City city, Speciality speciality) {
+        return doctorRepository.findByCityAndSpeciality(city, speciality);
+    }
+}
