@@ -1,0 +1,8 @@
+package com.example.doctorpatientplatform.entity;
+
+public enum Speciality {
+    ORTHOPAEDIC,
+    GYNECOLOGY,
+    DERMATOLOGY,
+    ENT
+}
