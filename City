@@ -1,0 +1,7 @@
+package com.example.doctorpatientplatform.entity;
+
+public enum City {
+    DELHI,
+    NOIDA,
+    FARIDABAD
+}
